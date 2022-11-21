@@ -91,12 +91,15 @@ if (count == 0)
 		}
 		count = obj.count;
 	}
-	List<T>& operator + ( const List& obj)
+	List<T>& operator + (  List obj)
 	{
 		
 		Merge(obj);
 		return *this;
 	}
+	List<T>& operator -- (  )
+	{delete end;
+	return *this;}
 	List<T>& operator != (List<T>& op2)
 {
 if (this.x != op2.x)
@@ -115,6 +118,7 @@ int main()
 	if(L[0]!=L[1]){cout <<"yes"<<endl;}
 	L.Add(4.1);
 	L.Add(3.3);
+	--L ;
 	L.Print("L: ");
 	P.Add(2);
 	P.Add(10);
